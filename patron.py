@@ -1,5 +1,9 @@
 class Patron:
-    def __init__(self, codigo, patron):
+    
+    def __init__(self, codigo, secuencia):
         self.codigo = codigo
-        self.patron = patron
+        self.secuencia = secuencia
         
+
+    def __str__(self) -> str:
+        return "{" + str(self.codigo) + " - " + str(self.secuencia) + "}"
