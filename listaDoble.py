@@ -48,11 +48,14 @@ class ListaDoble:
 
 
     def ordenar(self):
-        nombres = []
-        if self.primero is None:
-            return
         actual = self.primero
-        for name in actual.piso:
-            name = actual.piso.nombre
-            nombres.append(name)
-        return
+        
+        while (actual is not None):
+            aux = actual.siguiente
+            while (aux is not None):
+                if (aux.piso.nombre < actual.piso.nombre):
+                    auxT = Nodo(actual.piso)
+                    actual.piso = aux.piso
+                    aux.piso = auxT.piso
+                aux = aux.siguiente
+            actual = actual.siguiente

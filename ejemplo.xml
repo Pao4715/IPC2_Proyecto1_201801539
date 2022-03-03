@@ -6,25 +6,11 @@
         <F> 1 </F>
         <S> 1 </S>
         <patrones>
-            <patron codigo="cod11"> 
-                WBWBWWWB
-            </patron>
             <patron codigo="cod12"> 
                 BWBWWWWW
             </patron>
-        </patrones>
-    </piso>
-    <piso nombre="ejemplo02">
-        <R> 3 </R>
-        <C> 3 </C>
-        <F> 1 </F>
-        <S> 1 </S>
-        <patrones>
-            <patron codigo="cod21"> 
-                WBBBWBWWW
-            </patron>
-            <patron codigo="cod22"> 
-                WWWWBWWWB
+            <patron codigo="cod11"> 
+                WBWBWWWB
             </patron>
         </patrones>
     </piso>
@@ -39,6 +25,20 @@
             </patron>
             <patron codigo="cod32"> 
                 BBBWW
+            </patron>
+        </patrones>
+    </piso>
+    <piso nombre="ejemplo02">
+        <R> 3 </R>
+        <C> 3 </C>
+        <F> 1 </F>
+        <S> 1 </S>
+        <patrones>
+            <patron codigo="cod22"> 
+                WWWWBWWWB
+            </patron>
+            <patron codigo="cod21"> 
+                WBBBWBWWW
             </patron>
         </patrones>
     </piso>

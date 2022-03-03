@@ -1,4 +1,4 @@
-from manejoArchivos import extraerDatos, mostrarBuscarPatron
+from manejoArchivos import extraerDatos, mostrarBuscarPatron, imprimirOrdenar
 from listaDoble import ListaDoble
 
 class Menu:
@@ -31,7 +31,7 @@ class Menu:
         elif opcion == "4":
             print(" ")
         elif opcion == "5":
-            listaD.recorrerLista()
+            imprimirOrdenar()
         elif opcion == "6":
             break
         else: 
