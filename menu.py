@@ -1,4 +1,4 @@
-from manejoArchivos import extraerDatos, mostrarBuscarPatron, imprimirOrdenar
+from manejoArchivos import extraerDatos, mostrarBuscarPatron, imprimirOrdenar, graficar, buscarNuevoPatron
 from listaDoble import ListaDoble
 
 class Menu:
@@ -27,9 +27,9 @@ class Menu:
         elif opcion == "2":
             mostrarBuscarPatron()
         elif opcion == "3":
-            print(" ")
+            graficar()
         elif opcion == "4":
-            print(" ")
+            buscarNuevoPatron()
         elif opcion == "5":
             imprimirOrdenar()
         elif opcion == "6":

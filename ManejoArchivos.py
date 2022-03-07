@@ -7,6 +7,9 @@ from listaDoble import ListaDoble
 import os
 
 listaD = ListaDoble()
+auxiliar = ''
+floor = ''
+p = ''
 
 def extraerDatos():
 
@@ -66,6 +69,9 @@ def mostrarBuscar():
     print(listaD.buscar(p))
 
 def mostrarBuscarPatron():
+    global auxiliar
+    global floor
+    global p
     print("Ingrese nombre de Piso: ")
     p = str(input('>'))
     floor = listaD.buscar(p)
@@ -76,31 +82,42 @@ def mostrarBuscarPatron():
     print(auxiliar)
 
 
+def buscarNuevoPatron():
+    global p
+    global auxiliar
+    print("Ingrese nuevo código de Patron: ")
+    codigo = str(input('>'))
+    auxiliar = listaD.buscarPatron(p, codigo)
+    print(auxiliar)
+
+def graficar():
+    global auxiliar
+    global floor
     cadena = ''
-    file = open('grafica.dot', 'w')
+    file = open('Grafica.dot', 'w')
     cadena = cadena + 'digraph G { bgcolor="pink"\n'
     cadena = cadena + 'fontname="Helvetica,Arial,sans-serif" \n'
     cadena = cadena + 'node [fontname="Helvetica,Arial,sans-serif"] \n'
     cadena = cadena + 'edge [fontname="Helvetica,Arial,sans-serif"] \n'
-    cadena = cadena + 'a0 [label=< \n'
-    cadena = cadena + '<TABLE border="10" cellspacing="10" cellpadding="10" style="rounded" bgcolor="/rdylgn11/1:/rdylgn11/11" gradientangle="315"> \n'
+    cadena = cadena + 'a0 [shape = "none", label=< \n'
+    cadena = cadena + '<TABLE border="2" cellspacing="2" cellpadding="10" bgcolor="mediumpurple1"> \n'
     caracter = 0
     while caracter < len(auxiliar.secuencia):
         for i in range(1 , int(floor.filas)+1):
             cadena = cadena + '<TR> \n'
             for j in range(1, int(floor.columnas)+1):
                 if auxiliar.secuencia[caracter] == 'B':
-                    cadena = cadena + '<TD border="3"  bgcolor="black"  gradientangle="270"'+ auxiliar.secuencia[caracter] + '</TD>\n'
+                    cadena = cadena + '<TD border="1"  bgcolor="black"  gradientangle="270">'+ '</TD>\n'
                 else:
-                    cadena = cadena + '<TD border="3"  bgcolor="white"  gradientangle="270"'+ auxiliar.secuencia[caracter] + '</TD>\n'
+                    cadena = cadena + '<TD border="1"  bgcolor="white"  gradientangle="270">'+ '</TD>\n'
                 caracter += 1 
             cadena = cadena + '</TR>\n'
     cadena = cadena + '</TABLE>>];\n'
     cadena = cadena + '}\n'
     file.write(cadena)
     file.close()
-    os.system('dot -Tpng grafica.dot -o grafica.png')
-    os.startfile('grafica.png') 
+    os.system('dot -Tpng Grafica.dot -o Grafica.png')
+    os.startfile(os.path.normpath('Grafica.png')) 
 
 
 def bubble_sort(our_list):
